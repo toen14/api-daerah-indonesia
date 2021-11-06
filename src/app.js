@@ -6,6 +6,15 @@ const CustomError = require('./errors/custom-error');
 const port = process.env.PORT || 1945;
 const db = require('./db/db.config');
 
+// Tampilan default API
+app.get('/', (_, res) => {
+  res.status(200).json({
+    statusCode: 200,
+    message: 'Selamat datang di API Daerah Indonesia',
+    link: 'https://github.com/toen14/api-daerah-indonesia'
+  });
+})
+
 // Menampikan semua provinsi
 app.get('/api/provinsi', (_, res, next) => {
   db.all('SELECT * FROM tbl_provinsi', (err, data) => {
