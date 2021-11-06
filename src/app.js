@@ -23,7 +23,7 @@ app.get('/api/provinsi', (_, res, next) => {
 
 // Menampilkan semua kota-kabupaten
 app.get('/api/kota-kabupaten', (_, res, next) => {
-  const query = 'SELECT * FROM tbl_kota_kabupaten LIMIT 5'
+  const query = 'SELECT * FROM tbl_kota_kabupaten'
   db.all(query, (err, data) => {
     if (err) {
       return next(err);
@@ -59,7 +59,7 @@ app.get('/api/kota-kabupaten/:idProvinsi', (req, res, next) => {
 
 // Menampilkan seluruh kecamatan
 app.get('/api/kecamatan', (_, res, next) => {
-  const query = 'SELECT * FROM tbl_kecamatan LIMIT 5'
+  const query = 'SELECT * FROM tbl_kecamatan'
   db.all(query, (err, data) => {
     if (err) {
       return next(err);
@@ -95,7 +95,7 @@ app.get('/api/kecamatan/:idKotaKabupaten', (req, res, next) => {
 
 // Menampilkan seluruh kelurahan
 app.get('/api/kelurahan', (_, res, next) => {
-  const query = 'SELECT * FROM tbl_kelurahan LIMIT 5'
+  const query = 'SELECT * FROM tbl_kelurahan'
   db.all(query, (err, data) => {
     if (err) {
       return next(err);
