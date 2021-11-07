@@ -3,8 +3,11 @@ const app = require('express')();
 const errorHandler = require('./middlewares/error-handler');
 const CustomError = require('./errors/custom-error');
 
-const port = process.env.PORT || 1945;
+const port = process.env.PORT || 19451;
 const db = require('./db/db.config');
+
+// Atasi status code selalu 304
+app.disable('etag');
 
 // Tampilan default API
 app.get('/', (_, res) => {
